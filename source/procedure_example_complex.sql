@@ -1,16 +1,16 @@
-CREATE OR REPLACE PROCEDURE my_dataset.TRUNCATE_TABLE(CHARACTER VARYING(ANY))
+CREATE OR REPLACE PROCEDURE my_dataset.REMOVE_TEMP_TABLE(CHARACTER VARYING(ANY))
                             RETURNS  CHARACTER VARYING(ANY)
 
                             LANGUAGE NZPLSQL AS
                             BEGIN_PROC
                             DECLARE
                             tempTableName ALIAS FOR $1;
-                                    tempTableName2 ALIAS FOR $2;
                             BEGIN
 
-                            execute IMMEDIATE  'truncate table ' || tempTableName ;
-                            execute IMMEDIATE  'truncate table ' || tempTableName2 ;
+                            execute IMMEDIATE  'drop table ' || tempTableName ;
 
-                            return 'Table truncated' ;
+                            return 'Table dropped' ;
 
+
+                            END;
                             END_PROC;
