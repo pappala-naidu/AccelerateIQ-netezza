@@ -27,9 +27,9 @@ quantity INT
 );
 
 -- Add foreign key reference to 'orders' table
-ALTER TABLE order_items
+ALTER TABLE prajwal_test.order_items
 ADD FOREIGN KEY (order_id) REFERENCES orders(order_id);
 
 -- Add foreign key reference to 'products' table
-ALTER TABLE order_items
+ALTER TABLE prajwal_test.order_items
 ADD FOREIGN KEY (product_id) REFERENCES products(product_id);
